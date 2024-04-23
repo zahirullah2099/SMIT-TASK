@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quiz Result</h1>
+    <div id="quiz-result">
+        <p id="score-display"></p>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const score = urlParams.get('score');
+        const scoreDisplay = document.getElementById('score-display');
+
+        if (score !== null) {
+            scoreDisplay.textContent = `Your score: ${score} out of ${quizData.length}`;
+        } else {
+            scoreDisplay.textContent = 'No quiz score available.';
+        }
+    </script>
+</body>
+</html>
